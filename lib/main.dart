@@ -1,4 +1,3 @@
-import 'package:base_code/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,12 +8,14 @@ import 'common/config/screen_utils_config.dart';
 import 'common/enum/flavor_enum.dart';
 import 'common/local_data/shared_pref.dart';
 import 'common/network/dio/dio_builder.dart';
+import 'generated/colors.gen.dart';
 import 'generated/locales.g.dart';
 import 'routes/app_pages.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  const flavor = String.fromEnvironment('flavor', defaultValue: 'dev');
+  const flavor =
+      String.fromEnvironment('flavor', defaultValue: 'dev');
   FlavorConfig(flavor: getFlavorFromEnv(flavor));
   _configLoading();
   runApp(ScreenUtilInit(

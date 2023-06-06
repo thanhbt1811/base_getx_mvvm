@@ -1,4 +1,3 @@
-import 'package:base_code/common/utils/message_utils.dart';
 import 'package:base_code/data/repositories/home_repo/home_repo.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -34,7 +33,7 @@ class HomeViewModel extends GetxController {
     res.fold((data) {
       this.book.value = data;
     }, (error) {
-      MessagesUtils.showErrorMessage(error);
+      EasyLoading.showError(error.message);
     });
   }
 }
